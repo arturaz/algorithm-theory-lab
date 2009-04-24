@@ -9,27 +9,25 @@ class Checkerboard
     @came_from = Array.new(@length) { Array.new(@length, nil) }
 
     max_index = @length - 1
-    0.upto(max_index) do |x|
-      if x != 0
-        0.upto(max_index) do |y|
-          possible_y = [y]
-          possible_y.push y - 1 if y > 0
-          possible_y.push y + 1 if y < max_index
+    1.upto(max_index) do |x|
+      0.upto(max_index) do |y|
+        possible_y = [y]
+        possible_y.push y - 1 if y > 0
+        possible_y.push y + 1 if y < max_index
 
-          max_addon_score = 0
-          came_from = nil
+        max_addon_score = 0
+        came_from = nil
 
-          possible_y.each do |lower_level_y|
-            addon_score = @scores[x - 1][lower_level_y]
-            if addon_score > max_addon_score
-              max_addon_score = addon_score
-              came_from = lower_level_y
-            end
+        possible_y.each do |lower_level_y|
+          addon_score = @scores[x - 1][lower_level_y]
+          if addon_score > max_addon_score
+            max_addon_score = addon_score
+            came_from = lower_level_y
           end
-
-          @scores[x][y] = checkerboard[x][y] + max_addon_score
-          @came_from[x][y] = came_from
         end
+
+        @scores[x][y] = checkerboard[x][y] + max_addon_score
+        @came_from[x][y] = came_from
       end
     end
   end
