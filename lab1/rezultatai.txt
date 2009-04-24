@@ -1,0 +1,17 @@
+su 40000 skaiciu
+
+c:
+Vector merge sort 1 runs took 0.14 seconds
+List merge sort 1 runs took 18.51 seconds
+Vector heap sort 1 runs took 0.06 seconds
+list heap sort 1 runs took 35.73 seconds
+Vector counting sort 1 runs took 0.01 seconds
+list counting sort 1 runs took 0.03 seconds
+
+java:
+vector merge sort 1 runs took 0.757 seconds
+list merge sort 1 runs took 0.222 seconds
+vector heap sort 1 runs took 0.093 seconds
+list heap sort 1 runs took 46.11 seconds
+vector counting sort 1 runs took 0.024 seconds
+list counting sort 1 runs took 5.772 seconds
